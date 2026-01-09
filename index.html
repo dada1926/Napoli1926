@@ -1,76 +1,103 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Chat</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
+  <meta charset="UTF-8">
+  <title>Chat Napoli 💙</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e6f0ff;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
 
-        .community-section {
-            background-color: #ffffff;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 40px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+    .chat-box {
+      width: 350px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
 
-        .community-section h2 {
-            margin-bottom: 15px;
-            color: #333;
-        }
+    .chat-header {
+      background: #0074D9;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      font-weight: bold;
+    }
 
-        .community-section p {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.6;
-        }
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+    }
 
-        .community-section ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
+    .message {
+      margin-bottom: 8px;
+      background: #f1f1f1;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
 
-        .community-section li {
-            margin: 8px 0;
-        }
+    .chat-input {
+      display: flex;
+    }
 
-        .community-section a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #007BFF;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 0 0 0 10px;
+      outline: none;
+    }
 
-        .community-section a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .chat-input button {
+      padding: 10px;
+      border: none;
+      background: #0074D9;
+      color: white;
+      cursor: pointer;
+      border-radius: 0 0 10px 0;
+    }
+
+    .chat-input button:hover {
+      background: #005fa3;
+    }
+  </style>
 </head>
 <body>
 
-    <section class="community-section">
-        <h2>vieni nella nostra chat</h2>
-        <p>
-            una chat per dicutere delle partite del Napoli
-        </p>
+  <div class="chat-box">
+    <div class="chat-header">Chat Tifosi Napoli 💙</div>
+    <div class="chat-messages" id="messages"></div>
 
-        <ul>
-            <li>💬 parla con altra gente come te appassionata di calcio</li>
-            <li>🤝 Ottieni consiglio</li>
-            <li>🚀condividi le tue esperienze</li>
-        </ul>
+    <div class="chat-input">
+      <input type="text" id="input" placeholder="Scrivi un messaggio...">
+      <button onclick="sendMessage()">Invia</button>
+    </div>
+  </div>
 
-        <a href="#">aggiungiti alla chat dei fan</a>
-    </section>
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("input");
+      const messages = document.getElementById("messages");
+
+      if (input.value.trim() !== "") {
+        const msg = document.createElement("div");
+        msg.className = "message";
+        msg.textContent = input.value;
+
+        messages.appendChild(msg);
+        input.value = "";
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+  </script>
 
 </body>
 </html>
