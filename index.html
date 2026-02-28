@@ -1,3 +1,75 @@
+
+
+
+<div class="scudetto-container">
+  <div class="scudetto-icon">🏆</div>
+  <div class="counter" data-target="4">0</div>
+  <div class="label">Scudetti Vinti</div>
+</div>
+.scudetto-container {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  width: 200px;
+  margin: 50px auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.scudetto-icon {
+  font-size: 50px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.counter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Animazione battito dello scudetto */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+const counter = document.querySelector('.counter');
+const target = +counter.getAttribute('data-target');
+const duration = 2000; // Durata animazione in millisecondi
+
+const updateCount = () => {
+  const start = 0;
+  let startTime = null;
+
+  const animate = (currentTime) => {
+    if (!startTime) startTime = currentTime;
+    const progress = currentTime - startTime;
+    const currentNumber = Math.min(Math.floor((progress / duration) * target), target);
+    
+    counter.innerText = currentNumber;
+
+    if (progress < duration) {
+      requestAnimationFrame(animate);
+    }
+  };
+
+  requestAnimationFrame(animate);
+};
+
+// Avvia l'animazione al caricamento
+window.onload = updateCount;
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
