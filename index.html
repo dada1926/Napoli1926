@@ -1,139 +1,91 @@
-```html
+```html id="napoli_pro_max">
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Napoli 1926</title>
+<meta charset="UTF-8">
+<title>Napoli 1926 🔥</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(to right, #008CFF, #001F3F);
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(to right, #008CFF, #001F3F);
+  color: white;
+  text-align: center;
+}
 
-    header {
-      padding: 30px;
-      font-size: 40px;
-      font-weight: bold;
-      animation: fadeIn 2s;
-    }
+/* HEADER */
+header {
+  padding: 30px;
+  font-size: 40px;
+  font-weight: bold;
+}
 
-    nav {
-      background: rgba(0,0,0,0.3);
-      padding: 10px;
-    }
+/* TEXTE QUI S'ECRIT */
+#typing {
+  font-size: 20px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
 
-    nav a {
-      color: white;
-      margin: 15px;
-      text-decoration: none;
-      font-size: 18px;
-    }
+/* MENU */
+nav {
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+}
+nav a:hover {
+  color: yellow;
+}
 
-    nav a:hover {
-      color: yellow;
-    }
+/* SECTIONS */
+.section {
+  padding: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .section {
-      padding: 50px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
-    }
+/* IMAGE */
+img {
+  width: 250px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+img:hover {
+  transform: scale(1.1);
+}
 
-    .visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* BALLON */
+#ballon {
+  position: relative;
+  width: 80px;
+}
 
-    img {
-      width: 300px;
-      border-radius: 10px;
-      margin-top: 20px;
-      transition: transform 0.5s;
-    }
+/* BOUTON */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: yellow;
+  cursor: pointer;
+}
+button:hover {
+  background: orange;
+}
 
-    img:hover {
-      transform: scale(1.1);
-    }
-
-    button {
-      padding: 15px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      background: yellow;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    button:hover {
-      background: orange;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-  </style>
-</head>
-
-<body>
-
-<header>SSC Napoli 💙</header>
-
-<nav>
-  <a href="#histoire">Histoire</a>
-  <a href="#joueurs">Joueurs</a>
-  <a href="#fun">Fun</a>
-</nav>
-
-<div class="section" id="histoire">
-  <h2>Histoire</h2>
-  <p>Le Napoli est un club italien fondé en 1926 ⚽</p>
-  <img src="https://upload.wikimedia.org/wikipedia/fr/2/2d/SSC_Napoli.svg">
-</div>
-
-<div class="section" id="joueurs">
-  <h2>Joueurs célèbres</h2>
-  <p>Maradona, Osimhen, Hamsik 🔥</p>
-</div>
-
-<div class="section" id="fun">
-  <h2>Interaction</h2>
-  <p id="message">Clique pour supporter Napoli !</p>
-  <button onclick="changerTexte()">Forza Napoli</button>
-</div>
-
-<script>
-  // Animation au scroll
-  const sections = document.querySelectorAll(".section");
-
-  window.addEventListener("scroll", () => {
-    sections.forEach(section => {
-      const position = section.getBoundingClientRect().top;
-      const screen = window.innerHeight;
-
-      if (position < screen - 100) {
-        section.classList.add("visible");
-      }
-    });
-  });
-
-  // Bouton interactif
-  function changerTexte() {
-    document.getElementById("message").innerText = "FORZA NAPOLI 🔥💙";
-  }
-</script>
-
-</body>
-</html>
+/* QUIZ */
+.quiz {
+  margin-top: 20px;
+}
+</styl
 ```
-
-
-
-
-
