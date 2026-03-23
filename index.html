@@ -87,5 +87,96 @@ button:hover {
 .quiz {
   margin-top: 20px;
 }
-</styl
+</style>
+
+</head>
+
+<body>
+
+<header>SSC Napoli 💙</header>
+<div id="typing"></div>
+
+<nav>
+  <a href="#histoire">Histoire</a>
+  <a href="#animation">Animation</a>
+  <a href="#quiz">Quiz</a>
+</nav>
+
+<!-- HISTOIRE -->
+<div class="section" id="histoire">
+  <h2>Histoire</h2>
+  <p>Club fondé en 1926 en Italie ⚽</p>
+  <img src="https://upload.wikimedia.org/wikipedia/fr/2/2d/SSC_Napoli.svg">
+</div>
+
+<!-- ANIMATION -->
+<div class="section" id="animation">
+  <h2>Animation ⚽</h2>
+  <p>Le ballon bouge !</p>
+  <img id="ballon" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football.png">
+</div>
+
+<!-- QUIZ -->
+<div class="section" id="quiz">
+  <h2>Quiz Napoli 🎮</h2>
+  <p>Qui est une légende du Napoli ?</p>
+
+  <button onclick="reponse('faux')">Messi</button>
+  <button onclick="reponse('vrai')">Maradona</button>
+
+  <p id="resultat"></p>
+</div>
+
+<script>
+
+/* TEXTE QUI S'ECRIT */
+let texte = "Bienvenue sur mon site Napoli 🔥";
+let i = 0;
+
+function ecrire() {
+  if (i < texte.length) {
+    document.getElementById("typing").innerHTML += texte.charAt(i);
+    i++;
+    setTimeout(ecrire, 50);
+  }
+}
+ecrire();
+
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    const pos = section.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 100) {
+      section.classList.add("visible");
+    }
+  });
+});
+
+/* BALLON QUI BOUGE */
+let x = 0;
+let ballon = document.getElementById("ballon");
+
+setInterval(() => {
+  x += 5;
+  ballon.style.transform = "translateX(" + x + "px)";
+  if (x > 300) x = 0;
+}, 50);
+
+/* QUIZ */
+function reponse(rep) {
+  let resultat = document.getElementById("resultat");
+
+  if (rep === "vrai") {
+    resultat.innerText = "Bonne réponse 🔥";
+  } else {
+    resultat.innerText = "Faux 😢";
+  }
+}
+
+</script>
+
+</body>
+</html>
 ```
