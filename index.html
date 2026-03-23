@@ -1,207 +1,139 @@
-
-
-
-
-
+```html
 <!DOCTYPE html>
-<html lang="it">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Napoli - Il mio sito 💙</title>
-    <style>
-        /* Stili Generali */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <title>Napoli 1926</title>
 
-        header {
-            background-color: #001f55;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(to right, #008CFF, #001F3F);
+      color: white;
+      text-align: center;
+    }
 
-        .content {
-            padding: 20px;
-            background-color: white;
-            margin: 20px auto;
-            max-width: 900px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+    header {
+      padding: 30px;
+      font-size: 40px;
+      font-weight: bold;
+      animation: fadeIn 2s;
+    }
 
-        h1, h2 {
-            color: #0074D9;
-        }
+    nav {
+      background: rgba(0,0,0,0.3);
+      padding: 10px;
+    }
 
-        img, video {
-            max-width: 100%;
-            height: auto;
-            margin: 15px 0;
-            border-radius: 5px;
-            display: block;
-        }
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-        /* Stili per la Chat */
-        .chat-section {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+    nav a:hover {
+      color: yellow;
+    }
 
-        .chat-box {
-            width: 100%;
-            max-width: 400px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-            border: 2px solid #0074D9;
-        }
+    .section {
+      padding: 50px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
 
-        .chat-header {
-            background: #0074D9;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-            font-weight: bold;
-        }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .chat-messages {
-            height: 200px;
-            padding: 10px;
-            overflow-y: auto;
-            border-bottom: 1px solid #ccc;
-            background: #f9f9f9;
-        }
+    img {
+      width: 300px;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: transform 0.5s;
+    }
 
-        .message {
-            margin-bottom: 8px;
-            background: #e6f0ff;
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
+    img:hover {
+      transform: scale(1.1);
+    }
 
-        .chat-input {
-            display: flex;
-        }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: yellow;
+      cursor: pointer;
+      margin-top: 20px;
+    }
 
-        .chat-input input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            outline: none;
-            border-radius: 0 0 0 10px;
-        }
+    button:hover {
+      background: orange;
+    }
 
-        .chat-input button {
-            padding: 10px 20px;
-            border: none;
-            background: #0074D9;
-            color: white;
-            cursor: pointer;
-            border-radius: 0 0 10px 0;
-            font-weight: bold;
-        }
-
-        .chat-input button:hover {
-            background: #005fa3;
-        }
-    </style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Benvenuto nel mio sito sul Napoli</h1>
-        <p>Forza Napoli Sempre! 💙</p>
-    </header>
+<header>SSC Napoli 💙</header>
 
-    <div class="content">
-        <h2>Tutto sul Napoli</h2>
-        <p>Ciao, il mio nome è <strong>Davide</strong> e ho 11 anni. Ho scritto questa pagina per parlare del mio hobby, che è il Napoli.</p>
-        
-        <p>Qui c'è una cosa che devi sapere su di me:</p>
-        <ol>
-            <li>Parlo italiano, sono nato in Francia, ma tifo Napoli.</li>
-        </ol>
+<nav>
+  <a href="#histoire">Histoire</a>
+  <a href="#joueurs">Joueurs</a>
+  <a href="#fun">Fun</a>
+</nav>
 
-        <p>Il Napoli è una squadra di calcio che gioca in Serie A. Ha vinto 4 campionati italiani, sei Coppe Italia, tre Supercoppe italiane e una Coppa UEFA.</p>
+<div class="section" id="histoire">
+  <h2>Histoire</h2>
+  <p>Le Napoli est un club italien fondé en 1926 ⚽</p>
+  <img src="https://upload.wikimedia.org/wikipedia/fr/2/2d/SSC_Napoli.svg">
+</div>
 
-        <div class="chat-section">
-            <div class="chat-box">
-                <div class="chat-header">Chat Tifosi Napoli 💙</div>
-                <div class="chat-messages" id="messages">
-                    <div class="message">Benvenuto nella chat!</div>
-                </div>
-                <div class="chat-input">
-                    <input type="text" id="input" placeholder="Scrivi un messaggio...">
-                    <button onclick="sendMessage()">Invia</button>
-                </div>
-            </div>
-        </div>
+<div class="section" id="joueurs">
+  <h2>Joueurs célèbres</h2>
+  <p>Maradona, Osimhen, Hamsik 🔥</p>
+</div>
 
-        <h3>La Formazione 2025-2026</h3>
-        <ul>
-            <li><strong>Attacco:</strong> Neres - Hojlund - Politano</li>
-            <li><strong>Centrocampo:</strong> McTominay - Lobotka - Anguissa</li>
-            <li><strong>Difesa:</strong> Spinazzola - Buongiorno - Rrahmani - Di Lorenzo</li>
-            <li><strong>Portiere:</strong> Milinkovic-Savic</li>
-        </ul>
+<div class="section" id="fun">
+  <h2>Interaction</h2>
+  <p id="message">Clique pour supporter Napoli !</p>
+  <button onclick="changerTexte()">Forza Napoli</button>
+</div>
 
-        <h3>Il mio giocatore preferito</h3>
-        <p>Qui sotto c'è una foto di <strong>Rasmus Højlund</strong>:</p>
-        <img src="https://imgs.search.brave.com/i_wZRCboS5b3kkhVdhRHzGy1vuxDCUaM6avSR8Fstxo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90bXNz/bC5ha2FtYWl6ZWQu/bmV0Ly9pbWFnZXMv/Zm90by9nYWxlcmll/L2hvamx1bmQtc3Bv/dC0xNzU5NzU2ODMw/LTE3OTYyOC5wbmc" alt="Rasmus Højlund">
+<script>
+  // Animation au scroll
+  const sections = document.querySelectorAll(".section");
 
-        <h3>Video dei gol della stagione</h3>
-        <p>Guarda i gol della stagione:</p>
-        <video controls>
-            <sourcehttps://cdn.sscnapoli.it/wp-content/uploads/2026/03/HEADER-SITO_ORIZZONTALE_FEBBRAIO3-1.mp4
-            Il tuo browser non supporta il tag video.
-        </video>
+  window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+      const position = section.getBoundingClientRect().top;
+      const screen = window.innerHeight;
 
-        <h3>Le Leggende Azzurre</h3>
-        <ul>
-            <li><strong>Diego Armando Maradona:</strong> Il Re di Napoli.</li>
-            <li><strong>Cavani, Hamsik e Mertens:</strong> I grandi bomber.</li>
-            <li><strong>Kvaratskhelia e Osimhen:</strong> Gli eroi del terzo scudetto.</li>
-        </ul>
-    </div>
+      if (position < screen - 100) {
+        section.classList.add("visible");
+      }
+    });
+  });
 
-    <script>
-        function sendMessage() {
-            const input = document.getElementById("input");
-            const messages = document.getElementById("messages");
-
-            if (input.value.trim() !== "") {
-                const msg = document.createElement("div");
-                msg.className = "message";
-                msg.textContent = input.value;
-
-                messages.appendChild(msg);
-                input.value = "";
-                messages.scrollTop = messages.scrollHeight;
-            }
-        }
-
-        // Permette di inviare il messaggio premendo "Invio" sulla tastiera
-        document.getElementById("input").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                sendMessage();
-            }
-        });
-    </script>
+  // Bouton interactif
+  function changerTexte() {
+    document.getElementById("message").innerText = "FORZA NAPOLI 🔥💙";
+  }
+</script>
 
 </body>
 </html>
+```
+
+
 
 
 
