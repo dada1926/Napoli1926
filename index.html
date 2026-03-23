@@ -1,182 +1,54 @@
-```html id="napoli_pro_max">
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>Napoli 1926 🔥</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(to right, #008CFF, #001F3F);
-  color: white;
-  text-align: center;
-}
-
-/* HEADER */
-header {
-  padding: 30px;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-/* TEXTE QUI S'ECRIT */
-#typing {
-  font-size: 20px;
-  margin-top: -20px;
-  margin-bottom: 20px;
-}
-
-/* MENU */
-nav {
-  background: rgba(0,0,0,0.3);
-  padding: 10px;
-}
-nav a {
-  color: white;
-  margin: 15px;
-  text-decoration: none;
-}
-nav a:hover {
-  color: yellow;
-}
-
-/* SECTIONS */
-.section {
-  padding: 60px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* IMAGE */
-img {
-  width: 250px;
-  border-radius: 10px;
-  transition: 0.5s;
-}
-img:hover {
-  transform: scale(1.1);
-}
-
-/* BALLON */
-#ballon {
-  position: relative;
-  width: 80px;
-}
-
-/* BOUTON */
-button {
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  background: yellow;
-  cursor: pointer;
-}
-button:hover {
-  background: orange;
-}
-
-/* QUIZ */
-.quiz {
-  margin-top: 20px;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napoli 1926 - Passion Azzurra</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>SSC Napoli 💙</header>
-<div id="typing"></div>
+    <header>
+        <nav>
+            <div class="logo">Napoli <span>1926</span></div>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Actualités</a></li>
+                <li><a href="#">Équipe</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav>
-  <a href="#histoire">Histoire</a>
-  <a href="#animation">Animation</a>
-  <a href="#quiz">Quiz</a>
-</nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sempre Con Te</h1>
+            <p>Bienvenuto sul sito dédicato à la storia et à la passione per il SSC Napoli.</p>
+            <a href="#" class="btn">Découvrir l'histoire</a>
+        </div>
+    </section>
 
-<!-- HISTOIRE -->
-<div class="section" id="histoire">
-  <h2>Histoire</h2>
-  <p>Club fondé en 1926 en Italie ⚽</p>
-  <img src="https://upload.wikimedia.org/wikipedia/fr/2/2d/SSC_Napoli.svg">
-</div>
+    <section class="news">
+        <h2>ultime novità</h2>
+      <ul>
+      <h1>Torna KDB (Kevin de bruyne)</h1>
+      </ul>
+        <div class="news-grid">
+            <div class="card">
+                <h3>Prossime partite</h3>
+                <p>La prossima partita al maradona e Napoli-Milan</p>
+            </div>
+            <div class="card">
+                <h3>Mercato</h3>
+                <p>I ultimi aquisti.</p>
+              <h1>I ultimi aquisti sono : Alisson Santos e Giovane</h1>
+            </div>
+        </div>
+    </section>
 
-<!-- ANIMATION -->
-<div class="section" id="animation">
-  <h2>Animation ⚽</h2>
-  <p>Le ballon bouge !</p>
-  <img id="ballon" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football.png">
-</div>
-
-<!-- QUIZ -->
-<div class="section" id="quiz">
-  <h2>Quiz Napoli 🎮</h2>
-  <p>Qui est une légende du Napoli ?</p>
-
-  <button onclick="reponse('faux')">Messi</button>
-  <button onclick="reponse('vrai')">Maradona</button>
-
-  <p id="resultat"></p>
-</div>
-
-<script>
-
-/* TEXTE QUI S'ECRIT */
-let texte = "Bienvenue sur mon site Napoli 🔥";
-let i = 0;
-
-function ecrire() {
-  if (i < texte.length) {
-    document.getElementById("typing").innerHTML += texte.charAt(i);
-    i++;
-    setTimeout(ecrire, 50);
-  }
-}
-ecrire();
-
-/* SCROLL ANIMATION */
-const sections = document.querySelectorAll(".section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    const pos = section.getBoundingClientRect().top;
-    if (pos < window.innerHeight - 100) {
-      section.classList.add("visible");
-    }
-  });
-});
-
-/* BALLON QUI BOUGE */
-let x = 0;
-let ballon = document.getElementById("ballon");
-
-setInterval(() => {
-  x += 5;
-  ballon.style.transform = "translateX(" + x + "px)";
-  if (x > 300) x = 0;
-}, 50);
-
-/* QUIZ */
-function reponse(rep) {
-  let resultat = document.getElementById("resultat");
-
-  if (rep === "vrai") {
-    resultat.innerText = "Bonne réponse 🔥";
-  } else {
-    resultat.innerText = "Faux 😢";
-  }
-}
-
-</script>
+    <footer>
+        <p>&copy; 2024 Napoli 1926 - Fatto da un ultras di 11 anni</p>
+      <h1>Per contatarmi mandate mail al indirizzo :davide.imp14@gmail.com</h1>
+    </footer>
 
 </body>
 </html>
-```
