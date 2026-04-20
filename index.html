@@ -1,56 +1,164 @@
-<body style="background-color: skyblue;">
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Napoli 1926 - Passion Azzurra</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Napoli 1926</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f2c;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00aaff;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #00aaff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* NEWS */
+.news {
+    padding: 80px 20px;
+}
+
+.news h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.news-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #11163a;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Napoli <span>1926</span></div>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Actualités</a></li>
-                <li><a href="#">Équipe</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <h2>Napoli 1926</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Notizie</a></li>
+            <li><a href="#">Squadra</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Sempre Con Te</h1>
-            <p>Bienvenuto sul sito dédicato à la storia et à la passione per il SSC Napoli.</p>
-            <a href="#" class="btn">Découvrir l'histoire</a>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Sempre con te</h1>
+        <p>La passione azzurra non si ferma mai</p>
+        <a href="#" class="btn">Scopri di più</a>
+    </div>
+</section>
+
+<section class="news">
+    <h2>Ultime Notizie</h2>
+
+    <div class="news-grid">
+        <div class="card">
+            <h3>Prossima partita</h3>
+            <p>Napoli vs Milan - Stadio Maradona</p>
         </div>
-    </section>
 
-    <section class="news">
-        <h2>ultime novità</h2>
-      <ul>
-      <h1>Torna KDB (Kevin de bruyne)</h1>
-      </ul>
-        <div class="news-grid">
-            <div class="card">
-                <h3>Prossime partite</h3>
-                <p>La prossima partita al maradona e Napoli-Milan</p>
-            </div>
-            <div class="card">
-                <h3>Mercato</h3>
-                <p>I ultimi aquisti.</p>
-              <h1>I ultimi aquisti sono : Alisson Santos e Giovane</h1>
-            </div>
+        <div class="card">
+            <h3>Mercato</h3>
+            <p>Nuovi acquisti: Alisson Santos e Giovane</p>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 Napoli 1926 - Fatto da un ultras di 11 anni</p>
-      <h1>Per contatarmi mandate mail al indirizzo :davide.imp14@gmail.com</h1>
-    </footer>
+        <div class="card">
+            <h3>Storia</h3>
+            <p>Dal 1926, una leggenda del calcio italiano</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 Napoli 1926</p>
+</footer>
 
 </body>
 </html>
