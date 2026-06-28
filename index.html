@@ -1,164 +1,270 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Napoli 1926</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #0a0f2c;
-    color: white;
+:root{
+    --blue:#00AEEF;
+    --dark:#08142f;
+    --card:#132047;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:var(--dark);
+    color:white;
 }
 
 /* NAVBAR */
-header {
-    background: rgba(0,0,0,0.6);
-    position: fixed;
-    width: 100%;
-    top: 0;
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    backdrop-filter:blur(12px);
+    background:rgba(8,20,47,.75);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--blue);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
 
-nav a:hover {
-    color: #00aaff;
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--blue);
 }
 
 /* HERO */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1518091043644-c1d4457512c6")
+    center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
-.hero-content {
-    background: rgba(0,0,0,0.6);
-    padding: 30px;
-    border-radius: 10px;
+.hero-content{
+    max-width:700px;
 }
 
-.hero h1 {
-    font-size: 50px;
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    background: #00aaff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
+.hero p{
+    font-size:1.2rem;
+    opacity:.9;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 35px;
+    border-radius:50px;
+    background:var(--blue);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,174,239,.4);
 }
 
 /* NEWS */
-.news {
-    padding: 80px 20px;
+
+.news{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 20px;
 }
 
-.news h2 {
-    text-align: center;
-    margin-bottom: 40px;
+.news h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
 }
 
-.news-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
-.card {
-    background: #11163a;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    min-width: 250px;
-    transition: transform 0.3s;
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:15px;
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.05);
 }
 
-.card:hover {
-    transform: scale(1.05);
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:var(--blue);
+}
+
+.card p{
+    line-height:1.7;
 }
 
 /* FOOTER */
-footer {
-    background: black;
-    text-align: center;
-    padding: 20px;
+
+footer{
+    background:#050b1f;
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.6rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <h2>Napoli 1926</h2>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Notizie</a></li>
-            <li><a href="#">Squadra</a></li>
-        </ul>
-    </nav>
+
+<nav>
+
+<div class="logo">💙 Napoli 1926</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#news">Notizie</a></li>
+<li><a href="#">Squadra</a></li>
+</ul>
+
+</nav>
+
 </header>
 
+<main>
+
 <section class="hero">
-    <div class="hero-content">
-        <h1>Sempre con te</h1>
-        <p>La passione azzurra non si ferma mai</p>
-        <a href="#" class="btn">Scopri di più</a>
-    </div>
+
+<div class="hero-content">
+
+<h1>Sempre con te</h1>
+
+<p>La passione azzurra non si ferma mai.</p>
+
+<a href="#news" class="btn">Scopri di più</a>
+
+</div>
+
 </section>
 
-<section class="news">
-    <h2>Ultime Notizie</h2>
+<section class="news" id="news">
 
-    <div class="news-grid">
-        <div class="card">
-            <h3>Prossima partita</h3>
-            <p>Napoli vs Cremonese - Stadio Maradona</p>
-        </div>
+<h2>Ultime Notizie</h2>
 
-        <div class="card">
-            <h3>Mercato</h3>
-            <p>Nuovi acquisti: Alisson Santos e Giovane</p>
-        </div>
+<div class="news-grid">
 
-        <div class="card">
-            <h3>Storia</h3>
-            <p>Dal 1926, una leggenda del calcio italiano</p>
-        </div>
-    </div>
+<article class="card">
+<h3>⚽ Prossima partita</h3>
+<p>Napoli vs Genoa • Stadio Diego Armando Maradona</p>
+</article>
+
+<article class="card">
+<h3>🔄 Mercato</h3>
+<p>Rumors: Ernest Muci seguito dal Napoli.</p>
+</article>
+
+<article class="card">
+<h3>🏆 Storia</h3>
+<p>Dal 1926 il Napoli rappresenta una delle società più prestigiose del calcio italiano.</p>
+</article>
+
+</div>
+
 </section>
+
+</main>
 
 <footer>
-    <p>© 2024 Napoli 1926</p>
+
+<p>© 2026 Napoli 1926 • Tutti i diritti riservati</p>
+
 </footer>
 
 </body>
+
 </html>
